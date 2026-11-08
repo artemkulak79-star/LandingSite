@@ -5,7 +5,7 @@ function Card() {
 
   return (
     <>
-        <h1>uhegroihgoiho</h1>
+        <h1>Картинки разные</h1>
     </>
   )
 }

@@ -1,0 +1,41 @@
+.footerWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 16px 24px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Светлая тема (по умолчанию) */
+.footerWrapper[data_theme="light"] {
+  background-color: #ffffff;
+  color: #1a1a1a;
+  border: 2px solid #d32f2f;
+}
+
+/* Тёмная тема */
+.footerWrapper[data_theme="dark"] {
+  background-color: #1a1a1a;
+  color: #ffffff;
+  border: 2px solid #d32f2f;
+}
+
+.logo {
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #d32f2f;
+  flex-shrink: 0;
+}
+
+.title {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #d32f2f;
+}

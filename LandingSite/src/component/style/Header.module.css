@@ -1,0 +1,83 @@
+.headerWrapper {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 24px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Светлая тема (по умолчанию) */
+.headerWrapper[data_theme="light"] {
+  background-color: #ffffff;
+  color: #1a1a1a;
+  border: 2px solid #d32f2f;
+}
+
+/* Тёмная тема */
+.headerWrapper[data_theme="dark"] {
+  background-color: #1a1a1a;
+  color: #ffffff;
+  border: 2px solid #d32f2f;
+}
+
+.logo {
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #d32f2f;
+  flex-shrink: 0;
+}
+
+.title {
+  flex: 1;
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #d32f2f;
+}
+
+.switchBtnTheme {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  background-color: transparent;
+  border: 2px solid #d32f2f;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  flex-shrink: 0;
+}
+
+.switchBtnTheme:hover {
+  background-color: #d32f2f;
+  transform: scale(1.05);
+}
+
+.switchBtnTheme:active {
+  transform: scale(0.95);
+}
+
+.switchBtnTheme img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  filter: invert(0);           /* по умолчанию — как есть */
+  transition: filter 0.2s ease;
+}
+
+/* На тёмной теме иконку инвертируем, чтобы была видна на тёмном фоне */
+.headerWrapper[data_theme="dark"] .switchBtnTheme img {
+  filter: invert(1);
+}
+
+/* На hover кнопка красная — иконку возвращаем в исходный вид для контраста */
+.switchBtnTheme:hover img {
+  filter: invert(1) brightness(2);
+}
