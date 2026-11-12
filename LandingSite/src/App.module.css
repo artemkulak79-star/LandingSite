@@ -8,9 +8,10 @@
 }
 
 .main {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 24px;
+  align-content: start;
   max-width: 1200px;
   margin: 0 auto;
   padding: 32px 24px;
@@ -23,8 +24,15 @@
 .main::before {
   content: '';
   display: block;
+  grid-column: 1 / -1;
   height: 4px;
   background-color: #d32f2f;
   border-radius: 2px;
   margin-bottom: 8px;
+}
+
+/* Header и Footer — на всю ширину */
+.main > header,
+.main > footer {
+  grid-column: 1 / -1;
 }

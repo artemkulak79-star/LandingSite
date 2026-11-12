@@ -1,0 +1,85 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px 20px 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Светлая тема (по умолчанию) */
+.card[data-theme="light"] {
+  background-color: #ffffff;
+  color: #1a1a1a;
+  border: 2px solid #d32f2f;
+}
+
+/* Тёмная тема */
+.card[data-theme="dark"] {
+  background-color: #1a1a1a;
+  color: #ffffff;
+  border: 2px solid #d32f2f;
+}
+
+.cover {
+  width: 60%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 2px solid #d32f2f;
+}
+
+.text {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.likes {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+  color: #d32f2f;
+}
+
+.likeBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  background-color: transparent;
+  border: 2px solid #d32f2f;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  align-self: flex-start;
+}
+
+.likeBtn:hover {
+  background-color: #d32f2f;
+  transform: scale(1.05);
+}
+
+.likeBtn:active {
+  transform: scale(0.95);
+}
+
+.likeIcon {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  transition: filter 0.2s ease;
+}
+
+/* В тёмной теме иконка тёмная — инвертируем, чтобы была видна на тёмном фоне */
+.card[data-theme="dark"] .likeIcon {
+  filter: invert(1);
+}
+
+/* При наведении кнопка становится красной — иконку делаем светлой для контраста */
+.likeBtn:hover .likeIcon {
+  filter: invert(1) brightness(2);
+}
