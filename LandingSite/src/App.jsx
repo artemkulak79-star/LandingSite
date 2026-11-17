@@ -24,11 +24,9 @@ function App() {
   return (
     <currentTheme.Provider value={theme}>
       <div className={style.main}>
-        <Header switchTheme={switchTheme} />
         <Card  img = {spartak} content = {lorem}/>
         <Card  img = {logo} content = {lorem}/>
         <Card  img = {spartak} content = {lorem}/>
-        <Footer />
       </div>
     </currentTheme.Provider>
   )
